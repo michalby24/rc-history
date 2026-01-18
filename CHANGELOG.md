@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0](https://github.com/michalby24/rc-history/compare/v0.1.0...v0.1.0) (2026-01-18)
+
+
+### Miscellaneous Chores
+
+* enforce correct rc version ([93aa7bf](https://github.com/michalby24/rc-history/commit/93aa7bfca29bf100c8974c028471264550359b10))
+
 ## [0.1.0](https://github.com/michalby24/rc-history/compare/v0.0.1-rc.3...v0.1.0) (2026-01-18)
 
 
