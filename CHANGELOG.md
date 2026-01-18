@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.0](https://github.com/michalby24/rc-history/compare/v0.0.1-rc.3...v0.1.0) (2026-01-18)
+
+
+### Bug Fixes
+
+* this is a test merge next to main ([#6](https://github.com/michalby24/rc-history/issues/6)) ([ffb88f1](https://github.com/michalby24/rc-history/commit/ffb88f104807525816acb509610e043c142c7f1d))
+
+
+### Miscellaneous Chores
+
+* enforce correct rc version ([a3c50d8](https://github.com/michalby24/rc-history/commit/a3c50d8f111b9251db9b10a647efec8205fd2c53))
+
 ## [0.0.1-rc.3](https://github.com/michalby24/rc-history/compare/v0.0.1-rc.2...v0.0.1-rc.3) (2026-01-18)
 
 
