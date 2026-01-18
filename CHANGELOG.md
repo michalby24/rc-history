@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.1-rc.3](https://github.com/michalby24/rc-history/compare/v0.0.1-rc.2...v0.0.1-rc.3) (2026-01-18)
+
+
+### Bug Fixes
+
+* test close pr ([7254277](https://github.com/michalby24/rc-history/commit/7254277e5cb27860adf1ba680eaa6f5d3469e874))
+
+
+### Miscellaneous Chores
+
+* enforce correct rc version ([2bb02c5](https://github.com/michalby24/rc-history/commit/2bb02c5532b4994123a3fe03fbe8c303c0155ef9))
+
 ## 0.0.1-rc.2 (2026-01-18)
 
 
