@@ -402,11 +402,14 @@ class TestCalculateNextVersion(unittest.TestCase):
 class TestMainFunction(unittest.TestCase):
     """Test the main function"""
 
+    @patch('rc_align.run_git_command')
     @patch('rc_align.find_baseline_tag')
     @patch('rc_align.get_commit_depth')
     @patch('sys.stdout', new_callable=StringIO)
-    def test_main_no_commits(self, mock_stdout, mock_depth, mock_baseline):
+    def test_main_no_commits(self, mock_stdout, mock_depth, mock_baseline, mock_git):
         """Test main with no commits"""
+        # Mock git log to return a non-release commit
+        mock_git.return_value = "feat: some feature"
         mock_baseline.return_value = ("v1.0.0", True)
         mock_depth.return_value = 0
 
@@ -415,10 +418,13 @@ class TestMainFunction(unittest.TestCase):
         output = mock_stdout.getvalue()
         self.assertIn("No user commits found", output)
 
+    @patch('rc_align.run_git_command')
     @patch('rc_align.find_baseline_tag')
     @patch('sys.stdout', new_callable=StringIO)
-    def test_main_exception_handling(self, mock_stdout, mock_baseline):
+    def test_main_exception_handling(self, mock_stdout, mock_baseline, mock_git):
         """Test main handles exceptions gracefully"""
+        # Mock git log to return a non-release commit
+        mock_git.return_value = "feat: some feature"
         mock_baseline.side_effect = Exception("Test error")
 
         # Main should handle exception and exit gracefully
@@ -429,6 +435,19 @@ class TestMainFunction(unittest.TestCase):
         output = mock_stdout.getvalue()
         # The actual output shows it falls back gracefully
         self.assertIn("CRITICAL ERROR", output)
+
+    @patch('rc_align.run_git_command')
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_main_skips_release_please_merge(self, mock_stdout, mock_git):
+        """Test main skips when detecting a release-please merge commit"""
+        # Mock git log to return a release-please commit
+        mock_git.return_value = "chore(main): release 1.0.0"
+
+        rc_align.main()
+
+        output = mock_stdout.getvalue()
+        self.assertIn("Detected release-please merge commit", output)
+        self.assertIn("Skipping", output)
 
 
 class TestEdgeCases(unittest.TestCase):

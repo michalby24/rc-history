@@ -121,6 +121,12 @@ def main():
     branch = os.environ.get("GITHUB_REF_NAME")
     print(f"INFO: Running on branch: {branch}")
 
+    # Check if this is a release-please merge commit - if so, skip
+    last_commit_msg = run_git_command(["log", "-1", "--pretty=%s"], fail_on_error=False)
+    if last_commit_msg and re.match(r"^chore(\(.*\))?: release", last_commit_msg):
+        print(f"INFO: Detected release-please merge commit: '{last_commit_msg}'. Skipping.")
+        return
+
     # --- LOGIC FOR MAIN (Stable Promotion) ---
     if branch in ["main", "master"]:
         try:
