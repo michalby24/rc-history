@@ -16,11 +16,13 @@ permissions:
 jobs:
   release-please:
     runs-on: ubuntu-latest
-    # Skip if this is a merge from release-please
+    # Skip if this is a merge from release-please on next branch
+    # On main branch, we need to run to create the stable release
     if: |
-      !startsWith(github.event.head_commit.message, 'chore(main): release') &&
-      !startsWith(github.event.head_commit.message, 'chore(next): release') &&
-      !startsWith(github.event.head_commit.message, 'chore: release')
+      github.ref_name == 'main' || (
+        !startsWith(github.event.head_commit.message, 'chore(next): release') &&
+        !startsWith(github.event.head_commit.message, 'chore: release')
+      )
     steps:
       - name: Checkout
         uses: actions/checkout@v6
