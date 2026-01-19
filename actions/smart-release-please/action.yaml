@@ -124,6 +124,18 @@ runs:
           echo "RELEASE_TYPE=rc" >> $GITHUB_ENV
         fi
 
+    - name: Skip on release commit
+      id: skip_on_release
+      shell: bash
+      run: |
+        if [[ "${{ github.event.head_commit.message }}" == "chore(main): release"* || "${{ github.event.head_commit.message }}" == "chore(next): release"* || "${{ github.event.head_commit.message }}" == "chore: release"* ]]; then
+          echo "This is a release commit, skipping."
+          echo "skip=true" >> $GITHUB_OUTPUT
+        else
+          echo "This is not a release commit."
+          echo "skip=false" >> $GITHUB_OUTPUT
+        fi
+
     - name: Run release-please
       if: env.SKIP_RELEASE != 'true'
       uses: googleapis/release-please-action@v4
