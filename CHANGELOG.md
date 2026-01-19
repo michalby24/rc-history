@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.1-rc.4](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.3...v0.1.1-rc.4) (2026-01-19)
+
+
+### Bug Fixes
+
+* update condition to use startsWith for release message checks ([8d33457](https://github.com/michalby24/rc-history/commit/8d33457b8ea3caa27c1fdd7e3d8cd419e3da7331))
+
+
+### Miscellaneous Chores
+
+* enforce correct rc version ([1a3de7a](https://github.com/michalby24/rc-history/commit/1a3de7abf38916713483736c93bca27867a0466a))
+
 ## [0.1.1-rc.3](https://github.com/michalby24/rc-history/compare/v0.0.1-rc.3...v0.1.1-rc.3) (2026-01-18)
 
 
