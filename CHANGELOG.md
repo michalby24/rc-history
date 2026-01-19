@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.1-rc.11](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.9...v0.1.1-rc.11) (2026-01-19)
+
+
+### Bug Fixes
+
+* skip release-please on specific release commit messages ([b9a0190](https://github.com/michalby24/rc-history/commit/b9a01908f7aa9157852bb3645c79f28e9343bd29))
+
+
+### Miscellaneous Chores
+
+* enforce correct rc version ([f6c08c8](https://github.com/michalby24/rc-history/commit/f6c08c80a887e8453cab3051e9cf96ce4525845c))
+
 ## [0.1.1-rc.9](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.8...v0.1.1-rc.9) (2026-01-19)
 
 
