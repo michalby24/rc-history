@@ -14,10 +14,9 @@ def run_git_command(args, fail_on_error=True):
         return None
 
 def find_baseline_tag():
-    # Get all tags reachable from HEAD (only in current branch's history)
-    # sorted by commit date (most recent first)
+    # Get all tags in the repo sorted by semantic version (most recent first)
     tags_output = run_git_command(
-        ["tag", "-l", "v*", "--merged", "HEAD", "--sort=-committerdate"], 
+        ["tag", "-l", "v*", "--sort=-version:refname"], 
         fail_on_error=False
     )
     
