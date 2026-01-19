@@ -1,6 +1,18 @@
 # Changelog
 
 <<<<<<< HEAD
+## [0.1.2-rc.14](https://github.com/michalby24/rc-history/compare/v0.1.2-rc.13...v0.1.2-rc.14) (2026-01-19)
+
+
+### Bug Fixes
+
+* remove unnecessary steps and streamline RC calculation logic ([50a432f](https://github.com/michalby24/rc-history/commit/50a432f7c3fc584833af281ee67fa2256c30b291))
+
+
+### Miscellaneous Chores
+
+* enforce correct rc version ([6cf1675](https://github.com/michalby24/rc-history/commit/6cf1675299278978c1ccdba65daf0a94a7141d73))
+
 ## [0.1.2-rc.13](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.11...v0.1.2-rc.13) (2026-01-19)
 
 
