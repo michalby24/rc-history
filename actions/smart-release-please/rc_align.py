@@ -130,16 +130,25 @@ def main():
     # --- LOGIC FOR MAIN (Stable Promotion) ---
     if branch in ["main", "master"]:
         try:
-            tag, _ = find_baseline_tag()
+            # On main, we want to find the most recent tag (RC or stable)
+            # and promote it to stable by removing the -rc suffix
+            tags_output = run_git_command(
+                ["tag", "-l", "v*", "--sort=-version:refname"], 
+                fail_on_error=False
+            )
             
-            if not tag:
+            if not tags_output:
                 stable_version = "0.1.0"
-                print(f"INFO: No baseline tag found, defaulting to {stable_version}")
+                print(f"INFO: No tags found, defaulting to {stable_version}")
             else:
+                # Get the most recent tag by version (not by commit date)
+                latest_tag = tags_output.split('\n')[0]
+                print(f"INFO: Latest tag found: {latest_tag}")
+                
                 # Remove -rc suffix if present to get stable version
-                clean_tag = re.sub(r'-rc.*', '', tag)
+                clean_tag = re.sub(r'-rc.*', '', latest_tag)
                 stable_version = clean_tag.lstrip('v')
-                print(f"INFO: Detected tag {tag}, promoting to stable {stable_version}")
+                print(f"INFO: Promoting to stable {stable_version}")
 
             with open(os.environ["GITHUB_OUTPUT"], "a") as f:
                 f.write(f"next_version={stable_version}\n")
