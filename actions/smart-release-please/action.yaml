@@ -33,6 +33,7 @@ runs:
       # 3. Message is not already a release/bot message
       if: >-
         ${{ 
+          github.ref_name != 'main' && github.ref_name != 'master' &&
           steps.calc_rc.outputs.next_version != '' &&
           github.ref_name != 'main' && github.ref_name != 'master' &&
           !contains(github.event.head_commit.message, 'Release-As:') &&
@@ -49,7 +50,6 @@ runs:
         # Loop Protection (Shell check)
         LAST_MSG=$(git log -1 --pretty=%B)
         if [[ "$LAST_MSG" == *"Release-As: $TARGET_VER"* ]]; then
-          echo "Footer already present. Skipping push."
           exit 0
         fi
 
