@@ -1,6 +1,36 @@
 # Changelog
 
 <<<<<<< HEAD
+## [0.1.1-rc.21](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.11...v0.1.1-rc.21) (2026-01-19)
+
+
+### Bug Fixes
+
+* next ([#25](https://github.com/michalby24/rc-history/issues/25)) ([911d302](https://github.com/michalby24/rc-history/commit/911d302729d472e8d1d86b3add0131969d1aec37))
+* refine release-please merge commit checks for branch handling ([4b8c01c](https://github.com/michalby24/rc-history/commit/4b8c01c381acc4b2b071fbca6da6f307e3fb2885))
+* refine release-please merge commit checks for main and next branches ([f12bc92](https://github.com/michalby24/rc-history/commit/f12bc920bb9f08f405e1d6acd00996ef2bf19782))
+* skip release-please on specific release commit messages ([754b032](https://github.com/michalby24/rc-history/commit/754b032844c76fade512feddb43f37b1ccf025e2))
+* skip when rc ([55bc98c](https://github.com/michalby24/rc-history/commit/55bc98cdb7ff2db580da27ba5f170f98f9dff94f))
+* test ([199eacf](https://github.com/michalby24/rc-history/commit/199eacf8239ae8186bc3c6fb5ef9638208b4d5ac))
+* update condition to use startsWith for release message checks ([99e7f57](https://github.com/michalby24/rc-history/commit/99e7f571075b82e06999a6ac04823ec93efb29e7))
+
+
+### Miscellaneous Chores
+
+* enforce correct rc version ([7b4c39c](https://github.com/michalby24/rc-history/commit/7b4c39cd92da368dcf8459c9e68cfb9c7693a883))
+* enforce correct rc version ([b79bb0b](https://github.com/michalby24/rc-history/commit/b79bb0b8d4041c76a5116d458e5a86368d7cd29f))
+* enforce correct rc version ([5cdf76b](https://github.com/michalby24/rc-history/commit/5cdf76bc0b74877a141c4e0f9d974b04db68679c))
+* enforce correct rc version ([252eb46](https://github.com/michalby24/rc-history/commit/252eb466a4adb6177bf52dd26bd9847756b90430))
+* enforce correct rc version ([23913c2](https://github.com/michalby24/rc-history/commit/23913c2bfa697d2df2acfadb0a61d1444f8cd868))
+* enforce correct rc version ([24db1bf](https://github.com/michalby24/rc-history/commit/24db1bf2b163a90aa48c2a22369783be1a32676a))
+* enforce correct rc version ([1a531ad](https://github.com/michalby24/rc-history/commit/1a531ad717371d5269c7297c3d5e405a978a94f6))
+* enforce correct rc version ([7b103f3](https://github.com/michalby24/rc-history/commit/7b103f3a5d85ad782cba3217047c8daaa78ed73a))
+* enforce correct rc version ([2c1c712](https://github.com/michalby24/rc-history/commit/2c1c71279ee4f90abb77f420a1dc9396170e7bce))
+* enforce correct rc version ([94d1105](https://github.com/michalby24/rc-history/commit/94d11050533354ab43b516c2ed07ae94c3ed319a))
+* enforce correct rc version ([0379d0e](https://github.com/michalby24/rc-history/commit/0379d0e65e488e80d59cf9e6fc1c904f32e25394))
+* enforce correct rc version ([3c33d30](https://github.com/michalby24/rc-history/commit/3c33d307be4da5a235152091a5b64c90b30506e3))
+* enforce correct rc version ([c00f1c9](https://github.com/michalby24/rc-history/commit/c00f1c92d283cd1d27d8cfb66ad91111840c95f9))
+
 ## [0.1.1](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.9...v0.1.1) (2026-01-19)
 =======
 ## [0.1.1-rc.11](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.9...v0.1.1-rc.11) (2026-01-19)
