@@ -1,23 +1,40 @@
 # Changelog
 
-## [0.1.1](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.6...v0.1.1) (2026-01-19)
+## [0.1.1-rc.11](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.9...v0.1.1-rc.11) (2026-01-19)
 
 
 ### Bug Fixes
 
-* next ([#13](https://github.com/michalby24/rc-history/issues/13)) ([808f13a](https://github.com/michalby24/rc-history/commit/808f13a746d8463b174fa989e2f044e3d6712233))
-* next ([#15](https://github.com/michalby24/rc-history/issues/15)) ([9a35e7b](https://github.com/michalby24/rc-history/commit/9a35e7b227cf3852260db2fad17296953fcb1c28))
-* next ([#19](https://github.com/michalby24/rc-history/issues/19)) ([8168e2f](https://github.com/michalby24/rc-history/commit/8168e2f4d56c7b334a8e40f3aa6b293d51e7b0d0))
-* this is a test merge next to main ([#6](https://github.com/michalby24/rc-history/issues/6)) ([ffb88f1](https://github.com/michalby24/rc-history/commit/ffb88f104807525816acb509610e043c142c7f1d))
+* skip release-please on specific release commit messages ([b9a0190](https://github.com/michalby24/rc-history/commit/b9a01908f7aa9157852bb3645c79f28e9343bd29))
 
 
 ### Miscellaneous Chores
 
-* enforce correct rc version ([16c3474](https://github.com/michalby24/rc-history/commit/16c347446930acd2035910decc49bf86fafb498b))
-* enforce correct rc version ([fc82ea8](https://github.com/michalby24/rc-history/commit/fc82ea844131539a90aec23bac01bec3b9e49ff2))
-* enforce correct rc version ([93aa7bf](https://github.com/michalby24/rc-history/commit/93aa7bfca29bf100c8974c028471264550359b10))
-* enforce correct rc version ([ac00301](https://github.com/michalby24/rc-history/commit/ac003010fbe65d06badb7b734526ea5b4e79815d))
-* enforce correct rc version ([a3c50d8](https://github.com/michalby24/rc-history/commit/a3c50d8f111b9251db9b10a647efec8205fd2c53))
+* enforce correct rc version ([f6c08c8](https://github.com/michalby24/rc-history/commit/f6c08c80a887e8453cab3051e9cf96ce4525845c))
+
+## [0.1.1-rc.9](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.8...v0.1.1-rc.9) (2026-01-19)
+
+
+### Bug Fixes
+
+* refine release-please merge commit checks for branch handling ([0a7e6d5](https://github.com/michalby24/rc-history/commit/0a7e6d567c8c94351d891b1c4ab7ea1b063e8e22))
+
+
+### Miscellaneous Chores
+
+* enforce correct rc version ([979c301](https://github.com/michalby24/rc-history/commit/979c3018e04cfb919ff2fb5a583383754cb592cd))
+
+## [0.1.1-rc.8](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.6...v0.1.1-rc.8) (2026-01-19)
+
+
+### Bug Fixes
+
+* refine release-please merge commit checks for main and next branches ([a1b1344](https://github.com/michalby24/rc-history/commit/a1b134457abfd3f3a645b5d327eb6985d29daf8c))
+
+
+### Miscellaneous Chores
+
+* enforce correct rc version ([b78aab1](https://github.com/michalby24/rc-history/commit/b78aab139f65c26ebbfb4d29aa2d93e82475d7ae))
 
 ## [0.1.1-rc.6](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.4...v0.1.1-rc.6) (2026-01-19)
 
