@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.1-rc.9](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.8...v0.1.1-rc.9) (2026-01-19)
+
+
+### Bug Fixes
+
+* refine release-please merge commit checks for branch handling ([0a7e6d5](https://github.com/michalby24/rc-history/commit/0a7e6d567c8c94351d891b1c4ab7ea1b063e8e22))
+
+
+### Miscellaneous Chores
+
+* enforce correct rc version ([979c301](https://github.com/michalby24/rc-history/commit/979c3018e04cfb919ff2fb5a583383754cb592cd))
+
 ## [0.1.1-rc.8](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.6...v0.1.1-rc.8) (2026-01-19)
 
 
