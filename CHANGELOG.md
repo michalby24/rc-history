@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.1-rc.8](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.6...v0.1.1-rc.8) (2026-01-19)
+
+
+### Bug Fixes
+
+* refine release-please merge commit checks for main and next branches ([a1b1344](https://github.com/michalby24/rc-history/commit/a1b134457abfd3f3a645b5d327eb6985d29daf8c))
+
+
+### Miscellaneous Chores
+
+* enforce correct rc version ([b78aab1](https://github.com/michalby24/rc-history/commit/b78aab139f65c26ebbfb4d29aa2d93e82475d7ae))
+
 ## [0.1.1-rc.6](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.4...v0.1.1-rc.6) (2026-01-19)
 
 
