@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.1-rc.6](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.4...v0.1.1-rc.6) (2026-01-19)
+
+
+### Bug Fixes
+
+* **main:** promote most recent tag to stable version ([9d36751](https://github.com/michalby24/rc-history/commit/9d367516ec86c1e78b005f5c9d6a2100c1dbaa37))
+
+
+### Miscellaneous Chores
+
+* enforce correct rc version ([f5a8dab](https://github.com/michalby24/rc-history/commit/f5a8dabc4a805092669b9da57f67e1f2c7da7701))
+
 ## [0.1.1-rc.4](https://github.com/michalby24/rc-history/compare/v0.1.1-rc.3...v0.1.1-rc.4) (2026-01-19)
 
 
