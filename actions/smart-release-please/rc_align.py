@@ -28,7 +28,7 @@ def find_baseline_tag():
     
     all_tags = tags_output.split('\n')
     
-    # Sort by SemVer
+    # Python Sort: Ensures Stable > RC (e.g. 0.1.1 > 0.1.1-rc.99)
     def version_key(t):
         maj, min, pat, rc = parse_semver(t)
         is_stable = 1 if "-rc" not in t else 0
@@ -41,14 +41,24 @@ def find_baseline_tag():
 
 def get_commit_depth(baseline_tag):
     rev_range = f"{baseline_tag}..HEAD" if baseline_tag else "HEAD"
+    
+    # Use format=%s (subject) to filter
     raw_subjects = run_git_command(["log", rev_range, "--first-parent", "--pretty=format:%s"], fail_on_error=False)
     if not raw_subjects: return 0
 
     real_commits = []
     for s in raw_subjects.split('\n'):
+        # 1. Skip Bot/Release commits
         if BOT_FOOTER_TAG in s or BOT_COMMIT_MSG in s: continue
         if re.match(r"^chore(\(.*\))?: release", s): continue
         if "chore: reset manifest" in s: continue
+        
+        # 2. Skip Sync Merges (Main -> Next)
+        # Prevents version bump just for syncing stable changes back to RC
+        if "Merge branch" in s and ("main" in s or "master" in s):
+            print(f"INFO: Ignoring sync merge commit: {s}")
+            continue
+
         real_commits.append(s)
     
     return len(real_commits)
@@ -73,13 +83,14 @@ def calculate_next_version(major, minor, patch, rc, depth, is_breaking, is_feat,
 def main():
     branch = os.environ.get("GITHUB_REF_NAME")
     
-    # --- SKIP LOGIC FOR MAIN ---
-    # We do NOT calculate versions on main. We trust the manifest merged from next.
+    # --- SAFETY: SKIP MAIN ---
+    # We do NOT want to calculate or force versions on main.
+    # We trust the manifest merged from next.
     if branch in ["main", "master"]:
         print("INFO: Running on main/master. Skipping RC calculation.")
         return
 
-    # --- LOGIC FOR NEXT (RC Calculation) ---
+    # --- LOGIC FOR NEXT ---
     try:
         tag, from_stable = find_baseline_tag()
         depth = get_commit_depth(tag)

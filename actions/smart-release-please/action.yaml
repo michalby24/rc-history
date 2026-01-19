@@ -26,15 +26,15 @@ runs:
       shell: bash
       run: python3 "${{ github.action_path }}/rc_align.py"
 
-    # --- REMOVED THE "Fix Manifest for Main Branch" STEP HERE ---
-
     - name: Inject Release-As Footer
-      # Only run if Python calculated a version AND we are on 'next'
-      # We do NOT want to force this on main anymore; we trust the manifest from next.
+      # Only run if:
+      # 1. Python calculated a version (meaning we are on NEXT and have changes)
+      # 2. We are NOT on main (Double safety)
+      # 3. Message is not already a release/bot message
       if: >-
         ${{ 
-          github.ref_name != 'main' && github.ref_name != 'master' &&
           steps.calc_rc.outputs.next_version != '' &&
+          github.ref_name != 'main' && github.ref_name != 'master' &&
           !contains(github.event.head_commit.message, 'Release-As:') &&
           !startsWith(github.event.head_commit.message, 'chore: release') &&
           ! (startsWith(github.event.head_commit.message, 'chore(') && contains(github.event.head_commit.message, '): release'))
@@ -46,9 +46,10 @@ runs:
 
         TARGET_VER="${{ steps.calc_rc.outputs.next_version }}"
         
-        # Loop Protection
+        # Loop Protection (Shell check)
         LAST_MSG=$(git log -1 --pretty=%B)
         if [[ "$LAST_MSG" == *"Release-As: $TARGET_VER"* ]]; then
+          echo "Footer already present. Skipping push."
           exit 0
         fi
 
